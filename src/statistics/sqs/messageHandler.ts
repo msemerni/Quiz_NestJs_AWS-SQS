@@ -10,7 +10,7 @@ import { config } from './config';
 @Injectable()
 export class MessageHandler {
   constructor(private readonly statisticsService: StatisticsService) { 
-  }
+  };
   @SqsMessageHandler(config.STATISTICS_QUEUE, false)
   async handleMessage(message: AWS.SQS.Message) {
     const obj: CreateStatisticsDto = JSON.parse(message.Body);
