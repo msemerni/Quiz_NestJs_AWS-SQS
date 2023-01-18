@@ -1,3 +1,14 @@
+docker-compose up --build
+docker-compose down
+
+docker-compose up --build -d -V
+docker-compose up
+
+/////////////////////////
+docker-compose down -v
+docker-compose up -d 
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
