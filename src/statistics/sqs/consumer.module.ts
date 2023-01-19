@@ -13,6 +13,7 @@ AWS.config.update({
 
 @Module({
   imports: [
+    StatisticsModule,
     SqsModule.register({
       consumers: [
         {
@@ -22,8 +23,7 @@ AWS.config.update({
         },
       ],
       producers: [],
-    }),
-    StatisticsModule
+    })
   ],
   controllers: [],
   providers: [MessageHandler],
