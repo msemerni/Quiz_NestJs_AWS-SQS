@@ -6,12 +6,12 @@ export type StatisticsDocument = Statistic & Document;
 
 @Schema({ versionKey: false })
 export class Statistic {
-  // @Prop()
-  // statistics: CreateStatisticsDto
   @Prop()
-  user: CreateStatisticsDto;
+  gameID: CreateStatisticsDto;
   @Prop()
-  answers: CreateStatisticsDto;
+  totalQuestionsCount: CreateStatisticsDto;
+  @Prop()
+  statistics: CreateStatisticsDto;
 };
 
 export const StatisticsSchema = SchemaFactory.createForClass(Statistic);
