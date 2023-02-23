@@ -13,6 +13,7 @@ export class StatisticsController {
 	@HttpCode(HttpStatus.OK)
 	async getStatistics(): Promise<Statistic[]> {
 		const allStatistics: Statistic[] = await this.statisticsService.getAllStatistics();
+		
 		return allStatistics;
 	};
 
@@ -27,6 +28,7 @@ export class StatisticsController {
 
 		const msg: CreateStatisticsDto = JSON.parse(message.Messages[0].Body);
 		const newStatistics: Statistic = await this.statisticsService.saveOneStatistics(msg);
+
 		SQSService.deleteDataFromAWSQueue(message);
 
 		return newStatistics;

@@ -7,14 +7,14 @@ export interface IDBUser extends Document {
 };
 
 export interface CreateStatisticsDtoArr {
-  readonly id: string;
-  readonly title: string;
-  readonly userAnswer: string;
-  readonly correctAnswer: string;
-  readonly isCorrectAnswer: boolean;
+  readonly user: IDBUser;
+  readonly correctAnswers: number;
+  readonly isAnsweredCurrentQuestion: boolean;
+  readonly totalResponseTime: number;
 };
 
 export class CreateStatisticsDto {
-  readonly user: IDBUser;
-  readonly answers: CreateStatisticsDtoArr;
+  readonly gameID: string;
+  readonly totalQuestionsCount: number;
+  readonly statistics: Array<CreateStatisticsDtoArr>;
 };

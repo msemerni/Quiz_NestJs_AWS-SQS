@@ -21,6 +21,7 @@ const getDataFromAWSQueue = async (): Promise<PromiseResult<AWS.SQS.ReceiveMessa
     // ReceiveMessageWaitTimeSeconds: 20
   };
   const message = await sqs.receiveMessage(params).promise();
+  
   return message;
 }
 

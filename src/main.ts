@@ -6,7 +6,7 @@ const { PORT, APP_NAME } = process.env;
 const port = PORT || 3001;
 
 const startApp = async () => {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { abortOnError: false });
   await app.listen(PORT);
   console.log(`${APP_NAME} listen on port: ${port}`);
 }
